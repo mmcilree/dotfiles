@@ -3,4 +3,4 @@ vim.opt.linebreak = true
 vim.opt.tabstop = 4
 vim.opt.shiftwidth = 4
 vim.opt.clipboard = "unnamedplus"
-vim.opt.exrc = true
+vim.opt.foldlevel = 99
