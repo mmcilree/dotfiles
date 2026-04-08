@@ -228,3 +228,7 @@ on-mode-changed = []
     7 = 'secondary'   
     8 = 'secondary'   
     9 = 'secondary'   
+
+[[on-window-detected]]
+	if.app-id = 'mpv'
+	run = 'layout tiling'
