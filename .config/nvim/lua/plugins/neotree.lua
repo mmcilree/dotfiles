@@ -7,6 +7,16 @@ return {
 			"MunifTanjim/nui.nvim",
 			"nvim-tree/nvim-web-devicons", -- optional, but recommended
 		},
-		lazy = false,                -- neo-tree will lazily load itself
-	}
+		opts = {
+			filesystem = {
+				hijack_netrw_behavior = "disabled", -- don't open neo-tree on start up
+				window = {
+					mappings = {
+						["Z"] = "expand_all_nodes",
+					},
+				},
+			},
+		},
+		lazy = false, -- neo-tree will lazily load itself
+	},
 }

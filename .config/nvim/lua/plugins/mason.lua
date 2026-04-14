@@ -7,11 +7,28 @@ return {
 				"rust_analyzer",
 				"basedpyright",
 				"clangd",
-			}
+				"bashls",
+			},
 		},
 		dependencies = {
 			{ "mason-org/mason.nvim", opts = {} },
 			"neovim/nvim-lspconfig",
 		},
-	}
+	},
+	{
+
+		"WhoIsSethDaniel/mason-tool-installer.nvim",
+		opts = {
+			ensure_installed = {
+				"stylua",
+				"black",
+				"shfmt",
+				"shellcheck",
+				"djlint",
+			},
+		},
+		dependencies = {
+			{ "mason-org/mason.nvim", opts = {} },
+		},
+	},
 }

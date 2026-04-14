@@ -1,17 +1,23 @@
 return {
-	'nvim-telescope/telescope.nvim',
-	version = '*',
+	"nvim-telescope/telescope.nvim",
+	version = "*",
 	dependencies = {
-		'nvim-lua/plenary.nvim',
+		"nvim-lua/plenary.nvim",
 		-- optional but recommended
-		{ 'nvim-telescope/telescope-fzf-native.nvim', build = 'make' },
+		{ "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
 	},
 	config = function()
-		local builtin = require('telescope.builtin')
-		vim.keymap.set('n', '<leader>ff', builtin.find_files, {})
-		vim.keymap.set('n', '<C-p>', builtin.git_files, {})
-		vim.keymap.set('n', '<leader>fg', builtin.live_grep, { desc = 'Telescope live grep' })
-		vim.keymap.set('n', '<leader>fb', builtin.buffers, { desc = 'Telescope buffers' })
-		vim.keymap.set('n', '<leader>fk', builtin.keymaps, { desc = 'Telescope keymap' })
-	end
+		local builtin = require("telescope.builtin")
+		vim.keymap.set("n", "<leader>ff", builtin.find_files, {})
+		vim.keymap.set("n", "<leader>fp", builtin.git_files, {})
+		vim.keymap.set("n", "<leader>fg", builtin.live_grep, { desc = "Telescope live grep" })
+		vim.keymap.set("n", "<leader>fb", builtin.buffers, { desc = "Telescope buffers" })
+		vim.keymap.set("n", "<leader>fk", builtin.keymaps, { desc = "Telescope keymap" })
+		vim.keymap.set(
+			"n",
+			"<leader>fs",
+			builtin.lsp_dynamic_workspace_symbols,
+			{ desc = "Telescope workspace symbols" }
+		)
+	end,
 }

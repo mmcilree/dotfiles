@@ -1,8 +1,15 @@
 return {
 	"folke/tokyonight.nvim",
 	lazy = false,
-	opts = {},
+	opts = {
+		transparent = true,
+		style = "moon",
+		styles = {
+			sidebars = "transparent",
+			floats = "transparent",
+		},
+	},
 	config = function()
-		vim.cmd('colorscheme tokyonight-moon')
+		vim.cmd([[colorscheme tokyonight]])
 	end,
 }
