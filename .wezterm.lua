@@ -22,8 +22,8 @@ config.keys = {
 		mods = "CMD",
 		action = wezterm.action.SpawnTab("CurrentPaneDomain"),
 	},
-	{ key = "TAB", mods = "CTRL|SHIFT", action = wezterm.action.MoveTabRelative(-1) },
-	{ key = "TAB", mods = "CTRL", action = wezterm.action.MoveTabRelative(1) },
+	{ key = "Tab", mods = "CTRL|SHIFT", action = wezterm.action.MoveTabRelative(-1) },
+	{ key = "Tab", mods = "CTRL", action = wezterm.action.MoveTabRelative(1) },
 }
 
 return config
