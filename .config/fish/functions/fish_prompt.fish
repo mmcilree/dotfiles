@@ -1,4 +1,7 @@
 function fish_prompt --description 'Write out the prompt'
+		if dot status --porcelain 2>/dev/null | string match -qr '.'
+			echo (set_color yellow)"⚠️  dotfiles dirty"(set_color normal)
+		end
         set -l last_pipestatus $pipestatus
         set -lx __fish_last_status $status # Export for __fish_print_pipestatus.
     
