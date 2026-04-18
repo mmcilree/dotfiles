@@ -1,0 +1,6 @@
+# Ignore everything
+*
+# Except nvim config
+!.config/
+!.config/nvim/
+!.config/nvim/**
