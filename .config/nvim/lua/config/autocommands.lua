@@ -84,3 +84,11 @@ vim.api.nvim_create_autocmd("BufEnter", {
 		end, { desc = "Surround selection with self.starth() / self.endh()" })
 	end,
 })
+
+-- Terminal keymaps
+vim.api.nvim_create_autocmd("TermOpen", {
+	callback = function()
+		local nobuff = { buffer = 0 }
+		vim.keymap.set("t", "jk", [[<C-\><C-n>]], nobuff)
+	end,
+})
