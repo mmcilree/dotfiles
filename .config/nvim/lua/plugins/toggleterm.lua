@@ -26,5 +26,12 @@ return {
 			desc = "Terminal horizontal",
 			silent = true,
 		},
+		{
+			"<C-Space>", -- So this also works inside tmux
+			'<Cmd>execute v:count . "ToggleTerm direction=horizontal"<CR>',
+			mode = { "i", "n", "t" },
+			desc = "Terminal horizontal",
+			silent = true,
+		},
 	},
 }
