@@ -1,0 +1,8 @@
+[include]
+	path = ~/.gitconfig.local
+[init]
+	defaultBranch = main
+[alias]
+	a = add -u 
+	c = commit -m 
+	p = push
