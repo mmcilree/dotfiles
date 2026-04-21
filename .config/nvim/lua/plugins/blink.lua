@@ -11,7 +11,10 @@ return {
 	{
 		"saghen/blink.cmp",
 		-- optional: provides snippets for the snippet source
-		dependencies = { "rafamadriz/friendly-snippets" },
+		dependencies = {
+			"rafamadriz/friendly-snippets",
+			"micangl/cmp-vimtex", -- vimtex source for blink.compat to wrap
+		},
 
 		-- use a release tag to download pre-built binaries
 		version = "1.*",
@@ -50,6 +53,15 @@ return {
 			-- elsewhere in your config, without redefining it, due to `opts_extend`
 			sources = {
 				default = { "lsp", "path", "snippets", "buffer" },
+				per_filetype = {
+					tex = { "lsp", "path", "snippets", "buffer", "vimtex" },
+				},
+				providers = {
+					vimtex = {
+						name = "vimtex",
+						module = "blink.compat.source",
+					},
+				},
 			},
 
 			-- (Default) Rust fuzzy matcher for typo resistance and significantly better performance
@@ -61,13 +73,6 @@ return {
 		},
 		opts_extend = {
 			"sources.default",
-			compat = { "vimtex" },
-			providers = {
-				vimtex = {
-					name = "vimtex",
-					modules = "blink.compat.source",
-				},
-			},
 		},
 	},
 }
