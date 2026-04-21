@@ -16,14 +16,16 @@ local function paste()
 	}
 end
 
-vim.g.clipboard = {
-	name = "OSC 52",
-	copy = {
-		["+"] = require("vim.ui.clipboard.osc52").copy("+"),
-		["*"] = require("vim.ui.clipboard.osc52").copy("+"),
-	},
-	pase = {
-		["+"] = paste,
-		["*"] = paste,
-	},
-}
+if os.getenv("SSH_CLIENT") or os.getenv("SSH_TTY") then
+	vim.g.clipboard = {
+		name = "OSC 52",
+		copy = {
+			["+"] = require("vim.ui.clipboard.osc52").copy("+"),
+			["*"] = require("vim.ui.clipboard.osc52").copy("+"),
+		},
+		paste = {
+			["+"] = paste,
+			["*"] = paste,
+		},
+	}
+end
