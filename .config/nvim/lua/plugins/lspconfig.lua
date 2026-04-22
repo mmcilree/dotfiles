@@ -17,7 +17,15 @@ return {
 				},
 			},
 		})
+		vim.lsp.config("ltex_ls", {
+			settings = {
+				ltex = {
+					language = "en-GB",
+				},
+			},
+		})
 		vim.lsp.enable({ "lua_ls" })
+		vim.lsp.enable({ "ltex_ls" })
 		vim.lsp.enable({ "basedpyright" })
 		vim.lsp.enable({ "bashls" })
 		vim.lsp.enable({ "clippy" })

@@ -23,6 +23,7 @@ return {
 				"stylua",
 				"black",
 				"shfmt",
+				"ltex-ls",
 				"shellcheck",
 				"djlint",
 			},
