@@ -230,5 +230,9 @@ on-mode-changed = []
     9 = 'secondary'   
 
 [[on-window-detected]]
-	if.app-id = 'mpv'
-	run = 'layout tiling'
+	if.app-name-regex-substring = 'mpv'
+	run = ['join-with left', 'move up']
+
+[[on-window-detected]]
+	if.window-title-regex-substring = 'Manim Slides'
+	run = 'join-with right'
