@@ -3,6 +3,7 @@ return {
 	version = "*",
 	opts = {
 		shell = "fish",
+		shade_terminals = false,
 		size = function(term)
 			if term.direction == "horizontal" then
 				return math.floor(vim.o.lines * 0.5)
@@ -11,6 +12,13 @@ return {
 			end
 		end,
 	},
+	config = function(_, opts)
+		local colors = require("tokyonight.colors").setup()
+		opts.highlights = {
+			Normal = { guibg = colors.bg_dark },
+		}
+		require("toggleterm").setup(opts)
+	end,
 	keys = {
 		{
 			"<C-\\>",

@@ -5,8 +5,8 @@ return {
 		transparent = true,
 		style = "moon",
 		styles = {
-			sidebars = "transparent",
 			floats = "transparent",
+			sidebars = "transparent",
 		},
 	},
 	config = function(_, opts)
