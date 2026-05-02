@@ -42,6 +42,26 @@ vim.api.nvim_create_autocmd("FileType", {
 	end,
 })
 
+--- General python3
+vim.api.nvim_create_autocmd("FileType", {
+	pattern = "python",
+	callback = function()
+		vim.opt_local.makeprg = "python3 %"
+		vim.opt_local.errorformat = '%C %.%#,%A  File "%f"\\, line %l%.%#,%Z%[%^ ]%\\@=%m'
+		vim.keymap.set("n", "<localleader>m", function()
+			local file = vim.fn.expand("%:p")
+			local terms = require("toggleterm.terminal").get_all()
+			local Terminal = require("toggleterm.terminal").Terminal
+			local term = terms[1]
+			if not term then
+				term = Terminal:new({ direction = "horizontal" })
+			end
+			term:open()
+			term:send("python3 " .. file)
+		end, { buffer = true, desc = "Run current Python file" })
+	end,
+})
+
 -- manim
 vim.api.nvim_create_autocmd("BufEnter", {
 	pattern = "*.py",
