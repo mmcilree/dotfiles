@@ -7,6 +7,15 @@ vim.api.nvim_create_autocmd("VimEnter", {
 		end
 	end,
 })
+vim.api.nvim_create_autocmd("FileType", {
+	pattern = { "help", "fugitive", "git" },
+	callback = function()
+		if #vim.api.nvim_tabpage_list_wins(0) > 1 then
+			vim.cmd("wincmd T")
+		end
+	end,
+	desc = "Open help and Git windows in a new tab",
+})
 
 -- treesitter folding for python and rust
 vim.api.nvim_create_autocmd("FileType", {
