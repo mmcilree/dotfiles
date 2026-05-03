@@ -28,7 +28,9 @@ return {
 		vim.lsp.enable({ "ltex_ls" })
 		vim.lsp.enable({ "basedpyright" })
 		vim.lsp.enable({ "bashls" })
+		vim.lsp.enable({ "ts_ls" })
 		vim.lsp.enable({ "clippy" })
+
 		vim.keymap.set("n", "gd", vim.lsp.buf.definition, {})
 	end,
 }

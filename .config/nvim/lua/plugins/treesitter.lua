@@ -4,7 +4,19 @@ return {
 	-- requires: cargo install --locked tree-sitter-cli
 	init = function()
 		local installed = require("nvim-treesitter.config").get_installed()
-		local to_install = vim.iter({ "vimdoc", "rust", "cpp", "python", "lua", "vim", "latex", "bash" })
+		local to_install = vim.iter({
+			"vimdoc",
+			"rust",
+			"cpp",
+			"python",
+			"lua",
+			"vim",
+			"latex",
+			"bash",
+			"typescript",
+			"tsx",
+			"javascript",
+		})
 			:filter(function(p)
 				return not vim.tbl_contains(installed, p)
 			end)

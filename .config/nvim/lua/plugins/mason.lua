@@ -8,6 +8,7 @@ return {
 				"basedpyright",
 				"clangd",
 				"bashls",
+				"ts_ls",
 			},
 		},
 		dependencies = {
@@ -26,6 +27,7 @@ return {
 				"ltex-ls",
 				"shellcheck",
 				"djlint",
+				"prettier",
 			},
 		},
 		dependencies = {

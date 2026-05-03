@@ -19,7 +19,7 @@ vim.api.nvim_create_autocmd("FileType", {
 
 -- treesitter folding for python and rust
 vim.api.nvim_create_autocmd("FileType", {
-	pattern = { "python", "rust", "cpp" },
+	pattern = { "python", "rust", "cpp", "typescript", "typescriptreact", "javascript", "javascriptreact" },
 	callback = function()
 		vim.treesitter.start()
 		vim.wo[0][0].foldmethod = "expr"

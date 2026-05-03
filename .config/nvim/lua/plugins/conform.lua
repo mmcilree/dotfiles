@@ -21,6 +21,8 @@ return {
 			bash = { "shfmt", "shellcheck" },
 			zsh = { "shfmt", "shellcheck" },
 			sh = { "shfmt", "shellcheck" },
+			typescript = { "prettier" },
+			typescriptreact = { "prettier" },
 		},
 		-- Set default options
 		default_format_opts = {
