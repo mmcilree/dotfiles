@@ -17,7 +17,7 @@ vim.api.nvim_create_autocmd("FileType", {
 	desc = "Open help and Git windows in a new tab",
 })
 
--- treesitter folding for python and rust
+-- treesitter folding
 vim.api.nvim_create_autocmd("FileType", {
 	pattern = { "python", "rust", "cpp", "typescript", "typescriptreact", "javascript", "javascriptreact" },
 	callback = function()
@@ -42,6 +42,25 @@ vim.api.nvim_create_autocmd("FileType", {
 	end,
 })
 
+-- Markdown folding
+vim.api.nvim_create_autocmd("FileType", {
+	pattern = { "markdown" },
+	callback = function()
+		vim.wo[0][0].foldmethod = "expr"
+		vim.wo[0][0].foldexpr = "v:lua.MarkdownFold()"
+		vim.opt.foldtext = ""
+		vim.wo[0][0].foldcolumn = "1"
+	end,
+})
+
+function _G.MarkdownFold()
+	local line = vim.fn.getline(vim.v.lnum)
+	local level = line:match("^(#+)%s")
+	if level then
+		return ">" .. #level
+	end
+	return "="
+end
 --- General python3
 vim.api.nvim_create_autocmd("FileType", {
 	pattern = "python",
