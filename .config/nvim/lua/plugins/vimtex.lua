@@ -5,5 +5,6 @@ return {
 	init = function()
 		-- VimTeX configuration goes here, e.g.
 		vim.g.vimtex_view_method = "skim"
+		vim.keymap.set("i", "]]", "<plug>(vimtex-delim-close)<esc>O")
 	end,
 }
