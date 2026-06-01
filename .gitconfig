@@ -7,3 +7,7 @@
 	c = commit -m 
 	p = push
 	s = status
+[diff]
+	tool = nvimdiff
+[difftool]
+	prompt = false
