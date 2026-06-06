@@ -13,6 +13,7 @@ return {
 			"vim",
 			"latex",
 			"bash",
+			"lean",
 			"typescript",
 			"tsx",
 			"javascript",
