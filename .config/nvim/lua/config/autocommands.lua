@@ -140,3 +140,24 @@ vim.api.nvim_create_autocmd("TermOpen", {
 		vim.keymap.set("t", "jk", [[<C-\><C-n>]], nobuff)
 	end,
 })
+
+vim.api.nvim_create_autocmd("User", {
+	pattern = "TSUpdate",
+	callback = function()
+		require("nvim-treesitter.parsers").veripb = {
+			install_info = {
+				url = "https://github.com/mmcilree/tree-sitter-veripb",
+				queries = "queries",
+			},
+		}
+	end,
+})
+
+vim.filetype.add({ extension = { pbp = "veripb" } })
+vim.api.nvim_create_autocmd("FileType", {
+	pattern = { "veripb" },
+	callback = function()
+		vim.treesitter.start()
+		vim.opt.commentstring = "% %s"
+	end,
+})

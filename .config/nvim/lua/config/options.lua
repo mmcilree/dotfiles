@@ -29,3 +29,4 @@ if os.getenv("SSH_CLIENT") or os.getenv("SSH_TTY") then
 		},
 	}
 end
+vim.treesitter.language.register("veripb", { "pbp" })
