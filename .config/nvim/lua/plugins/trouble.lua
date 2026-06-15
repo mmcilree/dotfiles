@@ -10,9 +10,15 @@ return {
 		},
 		{
 			"<leader>xX",
-			"<cmd>Trouble diagnostics toggle filter.buf=0<cr>",
-			desc = "Buffer Diagnostics (Trouble)",
+			function()
+				require("trouble").toggle({
+					mode = "diagnostics",
+					filter = { buf = 0, severity = vim.diagnostic.severity.ERROR },
+				})
+			end,
+			desc = "Buffer Errors (Trouble)",
 		},
+
 		{
 			"<leader>cs",
 			"<cmd>Trouble symbols toggle focus=false<cr>",
@@ -32,6 +38,28 @@ return {
 			"<leader>xQ",
 			"<cmd>Trouble qflist toggle<cr>",
 			desc = "Quickfix List (Trouble)",
+		},
+		{
+			"]d",
+			function()
+				if require("trouble").is_open() then
+					require("trouble").next({ skip_groups = true, jump = true })
+				else
+					vim.diagnostic.goto_next()
+				end
+			end,
+			desc = "Next diagnostic (Trouble)",
+		},
+		{
+			"[d",
+			function()
+				if require("trouble").is_open() then
+					require("trouble").prev({ skip_groups = true, jump = true })
+				else
+					vim.diagnostic.goto_prev()
+				end
+			end,
+			desc = "Previous diagnostic (Trouble)",
 		},
 	},
 }

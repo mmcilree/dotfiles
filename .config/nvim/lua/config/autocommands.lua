@@ -96,7 +96,7 @@ vim.api.nvim_create_autocmd("BufEnter", {
 			"%C%.%#",
 			"%-G%.%#",
 		}, ",")
-		vim.keymap.set("n", "<leader>m", ":make<CR>", { buffer = true, desc = "Run Manim" })
+		vim.keymap.set("n", "<leader>m", ":Make<CR>", { buffer = true, desc = "Run Manim" })
 
 		-- surround with starth() endh()
 		vim.keymap.set("v", "<leader>sh", function()

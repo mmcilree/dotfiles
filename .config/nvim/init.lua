@@ -1,3 +1,4 @@
+vim.o.exrc = true
 require("config.keymaps")
 require("config.autocommands")
 require("config.options")
