@@ -12,3 +12,6 @@ vim.keymap.set("n", "<leader>b", ":Neotree toggle<CR>", opts)
 vim.keymap.set("n", "gD", function()
 	vim.lsp.buf.declaration()
 end, opts)
+
+vim.keymap.set("c", "<M-Left>", "<C-Left>", {})
+vim.keymap.set("c", "<M-Right>", "<C-Right>", {})
