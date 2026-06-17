@@ -15,11 +15,15 @@ return {
 		vim.keymap.set("n", "<leader>fg", builtin.live_grep, { desc = "Telescope live grep" })
 		vim.keymap.set("n", "<leader>fb", builtin.buffers, { desc = "Telescope buffers" })
 		vim.keymap.set("n", "<leader>fk", builtin.keymaps, { desc = "Telescope keymap" })
+		vim.keymap.set("n", "<leader>fs", builtin.lsp_workspace_symbols, { desc = "Workspace symbols (static)" })
 		vim.keymap.set(
 			"n",
-			"<leader>fs",
+			"<leader>fS",
 			builtin.lsp_dynamic_workspace_symbols,
-			{ desc = "Telescope workspace symbols" }
+			{ desc = "Workspace symbols (dynamic)" }
 		)
+		vim.keymap.set("n", "<leader>fd", builtin.lsp_document_symbols, { desc = "Document symbols" })
+		vim.keymap.set("n", "<leader>fr", builtin.resume, { desc = "Resume last picker" })
+		vim.keymap.set("n", "<leader>fR", builtin.pickers, { desc = "Picker history" })
 	end,
 }
