@@ -6,5 +6,17 @@ return {
 		-- VimTeX configuration goes here, e.g.
 		vim.g.vimtex_view_method = "skim"
 		vim.keymap.set("i", "]]", "<plug>(vimtex-delim-close)<esc>O")
+		vim.keymap.set(
+			"x",
+			"<localleader>se",
+			"<plug>(vimtex-env-surround-visual)",
+			{ desc = "Surround selection with environment" }
+		)
+		vim.keymap.set(
+			"n",
+			"<localleader>se",
+			"<plug>(vimtex-env-surround-operator)",
+			{ desc = "Surround motion with environment" }
+		)
 	end,
 }

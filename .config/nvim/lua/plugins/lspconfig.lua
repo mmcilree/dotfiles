@@ -17,7 +17,7 @@ return {
 				},
 			},
 		})
-		vim.lsp.config("ltex_ls", {
+		vim.lsp.config("ltex_plus", {
 			settings = {
 				ltex = {
 					language = "en-GB",
@@ -32,7 +32,7 @@ return {
 			},
 		})
 		vim.lsp.enable({ "lua_ls" })
-		vim.lsp.enable({ "ltex_ls" })
+		vim.lsp.enable({ "ltex_plus" })
 		vim.lsp.enable({ "basedpyright" })
 		vim.lsp.enable({ "bashls" })
 		vim.lsp.enable({ "ts_ls" })

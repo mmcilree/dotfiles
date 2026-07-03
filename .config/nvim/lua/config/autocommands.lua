@@ -39,6 +39,13 @@ vim.api.nvim_create_autocmd("FileType", {
 		vim.wo[0][0].foldexpr = "v:lua.vim.treesitter.foldexpr()"
 		vim.opt.foldtext = ""
 		vim.wo[0][0].foldcolumn = "1"
+		-- Deferred so it wins over ftplugins that enable spell after us
+		local win = vim.api.nvim_get_current_win()
+		vim.schedule(function()
+			if vim.api.nvim_win_is_valid(win) then
+				vim.wo[win].spell = false
+			end
+		end)
 	end,
 })
 

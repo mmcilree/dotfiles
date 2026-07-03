@@ -3,7 +3,10 @@ vim.opt.tabstop = 4
 vim.opt.shiftwidth = 4
 vim.opt.clipboard = "unnamedplus"
 vim.opt.foldlevel = 99
+vim.opt.number = true
 vim.opt.relativenumber = true
+vim.opt.wrap = true
+vim.opt.spell = false
 
 -- Inline diagnostics
 vim.diagnostic.config({ virtual_text = true })

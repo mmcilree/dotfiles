@@ -23,6 +23,7 @@ return {
 			sh = { "shfmt", "shellcheck" },
 			typescript = { "prettier" },
 			typescriptreact = { "prettier" },
+			tex = { "latexindent" },
 		},
 		-- Set default options
 		default_format_opts = {
@@ -34,6 +35,18 @@ return {
 		formatters = {
 			shfmt = {
 				append_args = { "-i", "2" },
+			},
+			latexindent = {
+				command = "latexindent",
+				stdin = true,
+				-- -l: load localSettings.yaml from the cwd (set to project root below)
+				-- -c: write indent.log / backups to the cache dir, not the repo
+				-- -m enables modifyLineBreaks (required for oneSentencePerLine)
+				args = { "-m", "-l=latexindent.yaml", "-c", vim.fn.stdpath("cache"), "-" },
+				cwd = function(_, ctx)
+					return vim.fs.root(ctx.dirname, { "latexindent.yaml", ".git" })
+				end,
+				require_cwd = false,
 			},
 		},
 	},
